@@ -1,18 +1,16 @@
-import firebase  from "firebase"
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDLUq3cF8U21JEQdpERn4OgKipV31vzS4o",
-    authDomain: "geo-ninja-6cb85.firebaseapp.com",
-    databaseURL: "https://geo-ninja-6cb85.firebaseio.com",
-    projectId: "geo-ninja-6cb85",
-    storageBucket: "geo-ninja-6cb85.appspot.com",
-    messagingSenderId: "1067900879045"
-  };
 
-  const firebaseApp =  firebase.initializeApp(config);
+Vue.use(Router)
 
-  firebaseApp.firestore().settings({timestampsInSnapshots: true})
-
-  // export database
-  export default firebaseApp.firestore()
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }
+]
+})
