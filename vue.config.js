@@ -8,8 +8,9 @@ module.exports = {
 
         new HtmlWebpackExternalsPlugin({
             externals: [
+   
               {
-                module: 'jquery',
+                module: 'google-map',
                 entry: {
                     path: 'https://maps.googleapis.com/maps/api/js',
                     type: 'js'
