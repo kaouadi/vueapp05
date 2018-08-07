@@ -66,6 +66,26 @@ export default {
                 streeViewControl: false
             })
 
+            db.collection('users').get().then(users => {
+                users.docs.forEach(doc => {
+                    let data = doc.data()
+                    if (data.geolocation) {
+                        console.log(data)
+                        let marker = new google.maps.Marker({
+                            position: {
+                                 lat: data.geolocation.latitude,
+                                 lng: data.geolocation.lng
+                            },
+                            map
+                        })
+                        marker.addListener('click', () => {
+                            console.log(doc.id)
+                        })
+                        
+                    }
+                })
+            })
+
         }
     }
 
