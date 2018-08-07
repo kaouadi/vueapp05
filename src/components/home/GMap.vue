@@ -19,9 +19,22 @@ export default {
         }
     },
     mounted(){
-
+        // Get user geolocation
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(post =>{
+                this.lat = post.coords.latitude
+                this.lng = post.coords.longitude
+                this.renderMap()
+            }, (err) => {
+                console.log(err)
+                this.renderMap()
+            }, {maximumAge: 60000, timeout: 3000})
+        } else
+        {
+            // position centre by defauld value
+            this.renderMap()
+        }
         this.renderMap()
-        console.log(firebase.auth().currentUser)
 
     },
     methods:{
