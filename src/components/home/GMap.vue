@@ -28,7 +28,7 @@ export default {
                 this.lat = position.coords.latitude
                 this.lng = position.coords.longitude
                 // find user records
-                db.collection('user').where('user_id', '==', user.uid).get()
+                db.collection('users').where('user_id', '==', user.uid).get()
                 .then(snapshot => {
                     snapshot.forEach((doc) => {
                         console.log(doc.id)
