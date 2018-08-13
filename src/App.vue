@@ -21,4 +21,8 @@ export default {
 /*@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css");*/
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+body{
+  background: #ddd
+}
+
 </style>
